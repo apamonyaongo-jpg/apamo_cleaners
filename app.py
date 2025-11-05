@@ -5,6 +5,16 @@ from config import *
 app = Flask(__name__)
 app.secret_key = 'apamo_secret_key'
 
+@app.route('/')
+def home():
+    conn = sqlite3.connect('your_database.db')  # Replace with your actual DB name
+    reviews = conn.execute('SELECT name, review FROM reviews').fetchall()
+    conn.close()
+    return render_template('index.html', reviews=reviews)
+
+if __name__ == '__main__':
+    app.run()
+
 # Initialize database
 def init_db():
     conn = sqlite3.connect('database.db')
