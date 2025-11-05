@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FreshNest Cleaners</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+  <h1>FreshNest Cleaners</h1>
+  <p>“We don’t just clean — we care.”</p>
+</header>
+
+<section class="intro">
+  <h2>Welcome</h2>
+  <p>We offer professional cleaning services for mattresses, rooms, sofasets, beds, and pest control. Serving Machakos and beyond with care and precision.</p>
+</section>
+
+<section class="services">
+  <h2>Our Services</h2>
+  <div class="service-grid">
+    <div class="service-item">
+      <img src="/static/mattress.jpg" alt="Mattress Cleaning">
+      <h3>Mattress Cleaning</h3>
+      <p>Deep cleaning to remove stains, odors, and allergens.</p>
+    </div>
+    <div class="service-item">
+      <img src="/static/room.jpg" alt="Room Cleaning">
+      <h3>Room Cleaning</h3>
+      <p>Thorough cleaning for homes, offices, and rentals.</p>
+    </div>
+    <div class="service-item">
+      <img src="/static/bed.jpg" alt="Chair Cleaning">
+      <h3>Sofaset & Bed Cleaning</h3>
+      <p>Fabric and frame cleaning for furniture and beds.</p>
+    </div>
+    <div class="service-item">
+      <img src="/static/fumagation.jpg" alt="Pest Control">
+      <h3>Fumigation</h3>
+      <p>Safe and effective pest control solutions.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Book a Cleaning</h2>
+  <form action="/book" method="POST">
+    <input name="name" placeholder="Your Name" required>
+    <input name="email" type="email" placeholder="Your Email" required>
+    <input name="service" placeholder="Service Needed" required>
+    <textarea name="details" placeholder="Additional Details"></textarea>
+    <button type="submit">Submit Booking</button>
+  </form>
+</section>
+
+<section class="reviews">
+  <h2>Client Reviews</h2>
+  <form action="/review" method="POST">
+    <input name="name" placeholder="Your Name" required>
+    <textarea name="review" placeholder="Your Review" required></textarea>
+    <button type="submit">Submit Review</button>
+  </form>
+  <div>
+    {% for name, review in reviews %}
+      <div><strong>{{ name }}</strong>: {{ review }}</div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="contact-info">
+  <h2>Contact Us</h2>
+  <p><strong>Phone:</strong> <a href="tel:+254106869949">+254 106 869 949</a></p>
+  <p><strong>Email:</strong> <a href="mailto:apamonyaongo@gmail.com">apamonyaongo@gmail.com</a></p>
+  <p><strong>WhatsApp:</strong> <a href="https://wa.me/qr/VOZYJ3CLD7UAB1" target="_blank">Chat on WhatsApp</a></p>
+  <p><strong>Location:</strong> Machakos, Kenya</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 FreshNest Cleaners. All rights reserved.</p>
+  <p>Website by Apamo | Powered by Flask & AI</p>
+</footer>
+
+
+
+<section class="map">
+  <h2>Find Us</h2>
+  <iframe src="https://www.google.com/maps?q=Machakos+University&output=embed" width="100%" height="300"></iframe>
+</section>
+
+<!-- WhatsApp Chat Button -->
+<a href="https://wa.me/254106869949" target="_blank" class="whatsapp">💬</a>
+
+</body>
+</html>

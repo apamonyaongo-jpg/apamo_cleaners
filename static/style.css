@@ -1,0 +1,110 @@
+body {
+  font-family: Arial;
+  background: #f4f4f4;
+  padding: 20px;
+}
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+input, textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+button {
+  background: #2c3e50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+}
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 24px;
+  text-decoration: none;
+}
+body {
+  font-family: Arial;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+section {
+  padding: 20px;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.service-item {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+.service-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+input, textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+button {
+  background: #2c3e50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+}
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 24px;
+  text-decoration: none;
+}
+.contact-info {
+  background: #fff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.contact-info h2 {
+  margin-bottom: 10px;
+}
+.contact-info p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+.contact-info a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Admin Dashboard</title></head>
+<body>
+  <h2>Bookings</h2>
+  <ul>
+    {% for b in bookings %}
+      <li>{{ b[1] }} | {{ b[2] }} | {{ b[3] }} | {{ b[4] }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Reviews</h2>
+  <ul>
+    {% for r in reviews %}
+      <li>{{ r[1] }}: {{ r[2] }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
