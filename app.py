@@ -1,22 +1,25 @@
 from flask import Flask, render_template, request, redirect, session
-import sqlite3, smtplib
+import sqlite3, smtplib, os
 from config import *
 
 app = Flask(__name__)
 app.secret_key = 'apamo_secret_key'
 
-# Initialize database
+# Initialize database before app loads
 def init_db():
-    conn = sqlite3.connect('database.db')
-    c = conn.cursor()
-    c.execute('''CREATE TABLE IF NOT EXISTS bookings (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT, email TEXT, service TEXT, details TEXT)''')
-    c.execute('''CREATE TABLE IF NOT EXISTS reviews (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT, review TEXT)''')
-    conn.commit()
-    conn.close()
+    if not os.path.exists('database.db'):
+        conn = sqlite3.connect('database.db')
+        c = conn.cursor()
+        c.execute('''CREATE TABLE bookings (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT, email TEXT, service TEXT, details TEXT)''')
+        c.execute('''CREATE TABLE reviews (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT, review TEXT)''')
+        conn.commit()
+        conn.close()
+
+init_db()  # ✅ Runs immediately when app.py is imported
 
 # Home page
 @app.route('/')
@@ -88,8 +91,3 @@ Details: {details}
         server.quit()
     except Exception as e:
         print("Email failed:", e)
-
-# Run the app
-if __name__ == '__main__':
-    init_db()
-    app.run()
